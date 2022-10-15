@@ -28,7 +28,9 @@ public class Book
 	/** Returns the age of the book in days since publication */
 	public int age()
 	{
-		return (int) Duration.between(dateOfPublication.toInstant(), new Date().toInstant()).toDays();
+		//new Date() returns now.
+		Duration duration = Duration.between(dateOfPublication.toInstant(), new Date().toInstant());
+		return (int) duration.toDays();
         
 	}
 
@@ -48,7 +50,11 @@ public class Book
 	/** Reads all book data from user input */
 	public void input() 
 	{
-		// TODO: Insert your code here!
+		setId(Prompt.PromptInt("Enter ID:"));
+		setTitle(Prompt.PromptString("Enter a title:"));
+		setAuthor(Prompt.PromptString("Enter an Author"));
+		String date = Prompt.PromptString("Enter a date in this format:" +DATE_FORMAT +":"
+		setDateOfPublication(stringToDate(date));
         
 	}
 
