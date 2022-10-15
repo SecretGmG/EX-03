@@ -53,7 +53,7 @@ public class Book
 		setId(Prompt.PromptInt("Enter ID:"));
 		setTitle(Prompt.PromptString("Enter a title:"));
 		setAuthor(Prompt.PromptString("Enter an Author"));
-		String date = Prompt.PromptString("Enter a date in this format:" +DATE_FORMAT +":"
+		String date = Prompt.PromptString("Enter a date in this format:" +DATE_FORMAT+":");
 		setDateOfPublication(stringToDate(date));
         
 	}
