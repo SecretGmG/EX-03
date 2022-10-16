@@ -1,3 +1,6 @@
+//Sigrist Cedric 22-120-844
+//Moritz Scholz 22-122-071
+
 package vehicles;
 import myIO.Print;
 import java.time.Year;
