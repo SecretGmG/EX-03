@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Prompt {
 	
-	//Scanners of System.in do/should not need to be closed
+	//Scanners of System.in do not need to /should not be closed
 	public static int promptInt(String text) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println(text);
