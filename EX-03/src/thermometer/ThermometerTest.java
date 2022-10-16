@@ -33,7 +33,6 @@ public class ThermometerTest {
 		}
 	}
 	
-	
 	public static void testAllFunctions(Thermometer thermometer) {
 		System.out.println(thermometer);
 		
@@ -47,7 +46,5 @@ public class ThermometerTest {
 		double expectedResult = TEST_VALUE_1 + 0.1*TEST_VALUE_2;
 		
 		Print.printDoubleTestResult("Test3: ", thermometer.getTemperature(), expectedResult);
-		
-		
 	}
 }

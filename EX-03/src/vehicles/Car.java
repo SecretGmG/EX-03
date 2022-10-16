@@ -6,7 +6,7 @@ import java.time.Period;
 import java.time.Year;
 
 public class Car {
-	private static Period DURRATION_TO_BE_ANTIQUE = Period.ofYears(45);
+	private static long YEARS_TO_BE_ANTIQUE = 45;
 	
 	private String brand;
 	private String model;
@@ -38,7 +38,7 @@ public class Car {
 	}
 	
 	public boolean isAntique() {
-		return vintage.isBefore(Year.now().minus(DURRATION_TO_BE_ANTIQUE));
+		return vintage.isBefore(Year.now().minusYears(YEARS_TO_BE_ANTIQUE));
 	}
 	
 	public String toString() {
