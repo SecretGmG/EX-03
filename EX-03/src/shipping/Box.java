@@ -1,12 +1,14 @@
 package shipping;
 
 public class Box {
-	double width;
-	double length;
-	double height;
-	boolean full;
-	Cargo cargo;
 	
+	
+	private double width;
+	private double length;
+	private double height;
+	private boolean full;
+	private Cargo cargo;
+	s
 	public Box(double width, double length, double height) {
 		this.width = width;
 		this.length = length;
@@ -21,7 +23,10 @@ public class Box {
 	}
 	
 	public boolean fits(Cargo cargo) {
-		return cargo.width < width && cargo.height < height && cargo.length < length;
+		return 
+				cargo.getWidth()  < width  && 
+				cargo.getHeight() < height && 
+				cargo.getLength() < length;
 	}
 	
 	public boolean addCargo(Cargo cargo){
@@ -32,5 +37,9 @@ public class Box {
 		full = true;
 		
 		return true;
+	}
+	public String toString() {
+		return "Box [width=" + width + ", length=" + length + ", height=" + height + ", full=" + full + ", cargo="
+				+ cargo + "]";
 	}
 }

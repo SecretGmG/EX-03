@@ -1,11 +1,22 @@
+//Sigrist Cedric 22-120-844
+//Moritz Scholz 22-122-071
 package shipping;
 
 public class Cargo {
-	String name;
-	double width;
-	double length;
-	double height;
+	private String name;
+	private double width;
+	private double length;
+	private double height;
 	
+	public Cargo(String name, double width, double length, double height) {
+		this.name = name;
+		this.width = width;
+		this.length = length;
+		this.height = height;
+	}
+	public Cargo(String name) {
+		this(name, 1, 1, 1);
+	}
 	
 	public String getName() {
 		return name;
@@ -32,6 +43,9 @@ public class Cargo {
 		this.height = height;
 	}
 	
+	public String toString() {
+		return "Cargo [name=" + name + ", width=" + width + ", length=" + length + ", height=" + height + "]";
+	}
 	
 	
 }

@@ -1,5 +1,6 @@
+//Sigrist Cedric 22-120-844
+//Moritz Scholz 22-122-071
 
-//package serie03;
 package book;
 import java.util.Date;
 import java.text.*;
@@ -50,10 +51,10 @@ public class Book
 	/** Reads all book data from user input */
 	public void input() 
 	{
-		setId(Prompt.PromptInt("Enter ID:"));
-		setTitle(Prompt.PromptString("Enter a title:"));
-		setAuthor(Prompt.PromptString("Enter an Author"));
-		String date = Prompt.PromptString("Enter a date in this format:" +DATE_FORMAT+":");
+		setId(Prompt.promptInt("Enter ID:"));
+		setTitle(Prompt.promptString("Enter a title:"));
+		setAuthor(Prompt.promptString("Enter an Author"));
+		String date = Prompt.promptString("Enter a date in this format:" +DATE_FORMAT+":");
 		setDateOfPublication(stringToDate(date));   
 	}
 
