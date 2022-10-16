@@ -11,7 +11,7 @@ public class Box {
 	private double height;
 	private boolean full;
 	private Cargo cargo;
-	s
+	
 	public Box(double width, double length, double height) {
 		this.width = width;
 		this.length = length;
