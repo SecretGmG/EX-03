@@ -11,7 +11,9 @@ public class Print {
 	public static void printTestResult(String test,  Object result, Object expected) {
 		System.out.println(test + (result==expected ? "Passed" : "Failed"));
 	}
-	/** Prints a Test result of a double with the default tolerance or no tolerance */
+	/** Prints a Test result of a double with the default tolerance or no tolerance
+	 * @param approximate if this parameter is true The test if the numbers are approximately equal
+	 */
 	public static void printTestResult(String test, double result, double expected, boolean approximate) {
 		printTestResult(test, result, expected, approximate ? DEFAULT_TOLERANCE : 0);
 	}
