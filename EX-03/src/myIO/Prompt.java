@@ -7,6 +7,7 @@ import java.util.Scanner;
 //Scanners of System.in do not need to / should not be closed
 @SuppressWarnings("resource")
 
+/** Simple static class used to prompt the user for inputs */
 public class Prompt {
 	
 	/** Asks the User to input an integer with a given message */

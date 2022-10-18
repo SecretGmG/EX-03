@@ -3,8 +3,9 @@
 
 package myIO;
 
+/** Simple static class to Print stuff to the user */
 public class Print {
-	private static double DEFAULT_TOLERANCE = 0.00001;
+	private static double DEFAULT_TOLERANCE = 0.000001;
 	
 	/** Prints a Test result */
 	public static void printTestResult(String test,  Object result, Object expected) {

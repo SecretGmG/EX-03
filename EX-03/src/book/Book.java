@@ -16,13 +16,15 @@ public class Book
 	private String title;
 	private String author;
 	private Date dateOfPublication;
-
+	
+	/** Constructs a Book from an id, title, author and dateOfPublicatiion*/
 	public Book(int id, String title, String author, Date dateOfPublication) {
 		this.id = id;
 		this.title = title;
 		this.author = author;
 		this.dateOfPublication = dateOfPublication;
 	}
+	/** Constructs a Book from an id, title, author and a formatted string dd.MM.yyyy */
 	public Book(int id, String title, String author, String formattedDate) {
 		this(id, title, author, stringToDate(formattedDate));
 	}

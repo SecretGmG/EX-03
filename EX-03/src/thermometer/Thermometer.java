@@ -8,6 +8,7 @@ public class Thermometer {
 	
 	private double temperature;
 	
+	/** Constructs a Thermometer initialized to the DEFAULT_TEMPERATURE */
 	public Thermometer() {
 		temperature = DEFAULT_TEMPERATURE;
 	}

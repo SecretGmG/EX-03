@@ -13,6 +13,7 @@ public class Car {
 	private String model;
 	private Year vintage;
 	
+	/** Constructs a Car with a brand, model and vintage */
 	public Car(String brand, String model, Year vintage) {
 		this.brand = brand;
 		this.model = model;
