@@ -11,18 +11,24 @@ public class Thermometer {
 	public Thermometer() {
 		temperature = DEFAULT_TEMPERATURE;
 	}
+
+	//--- Get-/Set-methods ---
 	public double getTemperature() {
 		return temperature;
 	}
+	
+	/** increases the temperature by INCREASE_AMOUNT */
 	public void increase() {
 		temperature += INCREASE_AMOUNT;
 	}
+	/** resets the temperature to DEFAULT_TEMPERATURE */
 	public void reset() {
 		temperature = DEFAULT_TEMPERATURE;
 	}
 	
+	/** overrides toString() */
 	public String toString() {
-		return "Thermometer [temperature=" + temperature + "]";
+		return String.format("Thermometer [temperature=%.1f]", temperature);
 	}
 	
 }

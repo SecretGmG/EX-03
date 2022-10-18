@@ -5,7 +5,6 @@ package shipping;
 
 public class Box {
 	
-	
 	private double width;
 	private double length;
 	private double height;
@@ -17,14 +16,17 @@ public class Box {
 		this.length = length;
 		this.height = height;
 	}
+	
 	public Box(){
 		this(1,1,1);
 	}
 	
+	/** Calculates the Volume of a Box */
 	public double getCapacity() {
 		return width*length*height;
 	}
 	
+	/** Checks if a given cargo would fit in the Box*/
 	public boolean fits(Cargo cargo) {
 		return 
 				cargo.getWidth()  < width  && 

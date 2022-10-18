@@ -21,6 +21,7 @@ public class Garage {
 		
 	}
 	
+	/**Tests all functions of a given car*/
 	public static void testAllFunctions(Car car) {
 		System.out.println("Testing new car:");
 		System.out.println(car);

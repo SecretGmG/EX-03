@@ -4,18 +4,22 @@
 package myIO;
 
 public class Print {
-	private static double DEFAULT_EPS = 0.00001;
+	private static double DEFAULT_TOLERANCE = 0.00001;
 	
+	/** Prints a Test result */
 	public static void printTestResult(String test,  Object result, Object expected) {
 		System.out.println(test + (result==expected ? "Passed" : "Failed"));
 	}
-	public static void printDoubleTestResult(String test, double result, double expected) {
-		printDoubleTestResult(test, result, expected, DEFAULT_EPS);
+	/** Prints a Test result of a double with the default tolerance or no tolerance */
+	public static void printTestResult(String test, double result, double expected, boolean approximate) {
+		printTestResult(test, result, expected, approximate ? DEFAULT_TOLERANCE : 0);
 	}
-	public static void printDoubleTestResult(String test, double result, double expected, double eps) {
-		System.out.println(test + (isApproxEqual(result,expected, eps) ? "Passed" : "Failed"));
+	/** Prints a Test result of a double with a given tolerance */
+	public static void printTestResult(String test, double result, double expected, double tolerance) {
+		System.out.println(test + (isApproxEqual(result,expected, tolerance) ? "Passed" : "Failed"));
 	}
-	private static boolean isApproxEqual(double val1, double val2, double eps) {
-		return Math.abs(val1-val2)<=eps;
+	/** Checks if two doubles are approximately equal */ 
+	private static boolean isApproxEqual(double val1, double val2, double tolerance) {
+		return Math.abs(val1-val2)<=tolerance;
 	}
 }

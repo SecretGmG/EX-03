@@ -4,50 +4,58 @@
 package book;
 import java.util.Date;
 import java.text.*;
-import java.time.Duration;
+//import java.time.Duration;
 import myIO.Prompt;
 
 public class Book
 {
 	public static final String DATE_FORMAT = "dd.MM.yyyy";
-
+	public static final long MILIS_PER_DAY = 1000*60*60*24; 
+	
 	private int id;
 	private String title;
 	private String author;
 	private Date dateOfPublication;
 
-	//--- constructors ---
-
-	// TODO: Insert your code here!
 	public Book(int id, String title, String author, Date dateOfPublication) {
 		this.id = id;
 		this.title = title;
 		this.author = author;
 		this.dateOfPublication = dateOfPublication;
 	}
-
-	/** Returns the age of the book in days since publication */
-	public int age()
-	{
-		//new Date() returns now.
-		Duration duration = Duration.between(dateOfPublication.toInstant(), new Date().toInstant());
-		return (int) duration.toDays();
-        
+	public Book(int id, String title, String author, String formattedDate) {
+		this(id, title, author, stringToDate(formattedDate));
 	}
 
+	/** Returns the age of the book in days since publication */
+	public int age() {
+		long durationInMilis = System.currentTimeMillis() - dateOfPublication.getTime();
+		return (int) (durationInMilis / MILIS_PER_DAY);
+		/*
+		* Alternative solution:
+		* Duration duration = Duration.between(dateOfPublication.toInstant(), new Date().toInstant());
+		* return (int) duration.toDays();
+		*/
+	}
+	
+	
 	/** Returns a String representation of the book */
 	public String toString()
 	{
 		return String.format(
-			"ID: %d\n"+
-			"Title: %s"+
-			"Author: %s"+
-			"DateOfPublication: %s",
+			"ID: %d Title: %s Author: %s DateOfPublication: %s",
 			id,title,author,dateToString(dateOfPublication)
 		);
         
 	}
-
+	
+	/** Instantiates a new book using user inputs */
+	public static Book fromInput() {
+		Book newBook = new Book(0,null,null,(Date)null); //cast null to date to not confuse the compiler
+		newBook.input();
+		return newBook;		
+	}
+	
 	/** Reads all book data from user input */
 	public void input() 
 	{

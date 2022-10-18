@@ -1,5 +1,6 @@
 //Sigrist Cedric 22-120-844
 //Moritz Scholz 22-122-071
+
 package shipping;
 
 public class Cargo {
@@ -17,7 +18,8 @@ public class Cargo {
 	public Cargo(String name) {
 		this(name, 1, 1, 1);
 	}
-	
+
+	//--- Get-/Set-methods ---
 	public String getName() {
 		return name;
 	}
@@ -43,9 +45,8 @@ public class Cargo {
 		this.height = height;
 	}
 	
+	/** overrides toString() */
 	public String toString() {
 		return "Cargo [name=" + name + ", width=" + width + ", length=" + length + ", height=" + height + "]";
-	}
-	
-	
+	}	
 }
